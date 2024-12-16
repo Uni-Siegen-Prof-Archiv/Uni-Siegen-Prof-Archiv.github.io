@@ -6,46 +6,67 @@
     <title>PDF und Spiel</title>
     <style>
         body {
-            margin: 0;
-            padding: 20px;
             font-family: Arial, sans-serif;
-        }
-        .layout-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            grid-template-rows: auto 1fr;
-            gap: 20px;
-            height: calc(100vh - 40px);
-        }
-        .navbar {
-            grid-column: 1 / -1;
-            display: flex;
-            gap: 20px;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        .nav-image {
-            height: 40px;
-        }
-        .pdf-container {
-            grid-row: 2;
-            grid-column: 1;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
         }
-        .pdf-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .navbar {
+            width: 100%;
+            background-color: #aecae9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .nav-link {
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-right: 35px;
+        }
+        .nav-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .nav-image {
+            height: 45px;
+            width: auto;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            height: 90%;
+            border: 1px solid #ccc;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 70px;
+        }
+        .pdf-viewer {
+            flex: 2;
+            border-right: 1px solid #ccc;
+            overflow: hidden;
+            position: relative;
+        }
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         .right-panel {
-            grid-row: 2;
-            grid-column: 2;
+            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            padding: 20px;
         }
         .stats-container {
             background: white;
@@ -70,26 +91,64 @@
             color: #0066cc;
         }
         .game-area {
-            flex-grow: 1;
-            background: white;
+            flex: 1;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .hidden {
             display: none;
         }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #question {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #answers {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #result-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
-    <div class="layout-container">
-        <div class="pdf-container">
-            <img src="info_csa_campaign.png" alt="PDF Content" class="pdf-image">
+    <!-- Navigationsleiste -->
+    <nav class="navbar">
+        <a href="#link1" class="nav-link">
+            <img src="hs.svg" alt="Link 1" class="nav-image">
+        </a>
+        <a href="#link3" class="nav-link">
+            <img src="siegen.svg" alt="Link 3" class="nav-image">
+        </a>
+    </nav>
+
+    <div class="container">
+        <!-- PDF Viewer -->
+        <div class="pdf-viewer">
+            <iframe src="info-hyper-guardian.pdf" class="pdf-frame"></iframe>
         </div>
 
-        
+        <!-- Rechte Seite -->
         <div class="right-panel">
-        
+            <!-- Statistik Container -->
             <div class="stats-container">
                 <div class="stat-box">
                     <div class="stat-label">Gesamte Aufrufe</div>
@@ -97,7 +156,7 @@
                 </div>
             </div>
 
-        
+            <!-- Spielbereich -->
             <div class="game-area">
                 <div id="question-container" class="hidden">
                     <p id="question"></p>
@@ -116,7 +175,7 @@
     </div>
 
     <script>
-      
+        // Vereinfachtes Tracking
         async function trackVisit() {
             let usbId = localStorage.getItem('usbId');
             
@@ -144,7 +203,7 @@
             }
         }
 
-  
+        // Initialer Tracking-Aufruf
         trackVisit();
     </script>
     
