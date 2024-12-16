@@ -127,6 +127,59 @@
             list-style-type: none;
             padding: 0;
         }
+         .pdf-content {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo-container img {
+            height: 60px;
+        }
+        .pdf-content h1 {
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .pdf-content h2 {
+            color: #000;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .pdf-content ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .pdf-content li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .pdf-content li::before {
+            content: "●";
+            color: #000;
+            position: absolute;
+            left: -20px;
+        }
+        .highlight {
+            color: #ff0000;
+        }
+        .blue-highlight {
+            color: #0066cc;
+        }
+        .contact-info {
+            margin-top: 30px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        
     </style>
 </head>
 <body>
@@ -141,9 +194,39 @@
     </nav>
 
     <div class="container">
-        <!-- PDF Viewer -->
-        <div class="pdf-viewer">
-            <iframe src="info-hyper-guardian.pdf" class="pdf-frame"></iframe>
+   <div class="pdf-viewer">
+            <div class="pdf-content">
+                <div class="logo-container">
+                    <img src="hs.svg" alt="Hochschule Mannheim Logo">
+                    <img src="siegen.svg" alt="Universität Siegen Logo">
+                </div>
+
+                <h1>Du bist Teil unserer Cyber Security Kampagne!</h1>
+
+                <h2>WAS IST PASSIERT?</h2>
+                <p>DU HAST GERADE EINEN USB-STICK EINGESTECKT, WELCHER IRGENDWO AUF DEM CAMPUS GEFUNDEN HAST? DIESER STICK WURDE IM RAHMEN EINER <span class="blue-highlight">CYBER SECURITY AWARENESS KAMPAGNE</span> DER HOCHSCHULE MANNHEIM ABSICHTLICH PLATZIERT, UM AUF POTENZIELLE SICHERHEITSRISIKEN HINZUWEISEN.</p>
+
+                <h2>WAS STECKT DAHINTER?</h2>
+                <p>KEINE SORGE... WIR SIND STUDIERENDE DER HOCHSCHULE MANNHEIM UND FÜHREN DIESE KAMPAGNE IN ZUSAMMENARBEIT MIT DER UNIVERSITÄT SIEGEN DURCH. UNSER ZIEL IST ES, DAS BEWUSSTSEIN FÜR IT-SICHERHEIT ZU SCHÄRFEN UND UNTER ANDEREM AUF DIE GEFAHREN IM UMGANG MIT UNBEKANNTEN USB/ANDEREN DATENTRÄGERN HINZUWEISEN.</p>
+
+                <h2>WAS STECKT DAHINTER?</h2>
+                <ul>
+                    <li>STECKE KEINE <span class="highlight">FREMDEN DATENTRÄGER</span> IN DEIN GERÄT.</li>
+                    <li>HALTE DEINE <span class="highlight">SICHERHEITSSOFTWARE STETS AKTUELL</span> UND INFORMIERE DICH REGELMÄßIG ÜBER AKTUELLE BEDROHUNGEN.</li>
+                    <li>VERWENDE <span class="highlight">ANTIVIRUS</span> PROGRAMME</li>
+                </ul>
+
+                <h2>WAS SOLLTEST DU JETZT TUN?</h2>
+                <p>BITTE LEGE DEN USB-STICK AN DEN ORT ZURÜCK, AN DEM DU IHN GEFUNDEN HAST, DAMIT AUCH ANDERE VON DIESER KAMPAGNE LERNEN KÖNNEN.</p>
+
+                <h2>FRAGEN?</h2>
+                <div class="contact-info">
+                    <p>MELDET EUCH BEI:</p>
+                    <p>ciso@uni-siegen.de</p>
+                    <p>hyperguards0@gmail.com</p>
+                    <p>ODER: <a href="#" class="blue-highlight">BSI - AWARENESS</a></p>
+                </div>
+            </div>
         </div>
 
         <!-- Rechte Seite -->
