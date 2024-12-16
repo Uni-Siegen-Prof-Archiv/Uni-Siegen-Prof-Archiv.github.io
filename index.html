@@ -6,18 +6,114 @@
         body {
             margin: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            font-family: Arial, sans-serif;
         }
         img {
             max-width: 100%;
             height: auto;
         }
+        #stats {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 12px;
+            display: none; /* Standardmäßig versteckt */
+        }
+        .stat-row {
+            margin: 5px 0;
+        }
+        #toggleStats {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <img src="picture_enlightenment.png" alt="Eine Aufklärung über die Gefahren, die entstehen können, wenn unbekannte Links aufgerugen werden.">
+    
+    <button id="toggleStats">📊</button>
+    <div id="stats">
+        <div class="stat-row">Aufrufe: <span id="totalVisits">-</span></div>
+        <div class="stat-row">USB-Sticks: <span id="uniqueUsbs">-</span></div>
+        <div class="stat-row">USB-ID: <span id="currentUsb">-</span></div>
+    </div>
+
+    <script>
+        // USB-ID Generierung
+        function generateUsbId() {
+            if (!localStorage.getItem('usbId')) {
+                const timestamp = new Date().getTime();
+                const random = Math.floor(Math.random() * 10000);
+                const usbId = `usb-${timestamp}-${random}`;
+                localStorage.setItem('usbId', usbId);
+            }
+            return localStorage.getItem('usbId');
+        }
+
+        // Toggle Stats Anzeige
+        document.getElementById('toggleStats').addEventListener('click', function() {
+            const stats = document.getElementById('stats');
+            if (stats.style.display === 'none') {
+                stats.style.display = 'block';
+                this.style.display = 'none';
+            }
+        });
+
+        // Klick außerhalb schließt Stats
+        document.addEventListener('click', function(event) {
+            const stats = document.getElementById('stats');
+            const toggleBtn = document.getElementById('toggleStats');
+            if (!stats.contains(event.target) && event.target !== toggleBtn) {
+                stats.style.display = 'none';
+                toggleBtn.style.display = 'block';
+            }
+        });
+
+        // Tracking-Funktion
+        async function trackVisit() {
+            const usbId = generateUsbId();
+            
+            try {
+                // Sende Tracking-Daten an den Server
+                const response = await fetch('https://IHRE-PYTHON-APP-URL/track', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        usbId: usbId
+                    })
+                });
+
+                // Aktualisiere Statistiken
+                const statsResponse = await fetch('https://IHRE-PYTHON-APP-URL/stats');
+                const stats = await statsResponse.json();
+                
+                document.getElementById('totalVisits').textContent = stats.totalVisits;
+                document.getElementById('uniqueUsbs').textContent = stats.uniqueUsbs;
+                document.getElementById('currentUsb').textContent = usbId;
+            } catch (error) {
+                console.error('Tracking error:', error);
+            }
+        }
+
+        // Initialer Tracking-Aufruf
+        trackVisit();
+    </script>
 </body>
 </html>
-
