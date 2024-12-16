@@ -40,8 +40,8 @@ const resultList = document.getElementById("results-list");
 startButton.addEventListener("click", startGame);
 
 function startGame() {
-    startButton.parentElement.classList.add("hidden"); // Versteckt den Startbereich
-    questionContainer.classList.remove("hidden"); // Zeigt die Fragen an
+    startButton.parentElement.classList.add("hidden"); 
+    questionContainer.classList.remove("hidden"); 
     loadQuestion();
 }
 
@@ -57,13 +57,12 @@ function loadQuestion() {
         optionsElement.appendChild(button);
     });
 
-    nextButton.classList.add("hidden"); // Versteckt den "Nächste Frage"-Button, bis eine Antwort gewählt wurde
-}
+    nextButton.classList.add("hidden"); 
 
 function selectAnswer(selectedOption, button) {
     const currentQuestion = questions[currentQuestionIndex];
     const buttons = optionsElement.querySelectorAll("button");
-    buttons.forEach(btn => btn.disabled = true); // Deaktiviert alle Antwortbuttons nach Auswahl
+    buttons.forEach(btn => btn.disabled = true);
 
     if (selectedOption === currentQuestion.answer) {
         score++;
@@ -72,7 +71,7 @@ function selectAnswer(selectedOption, button) {
         button.style.backgroundColor = "red";
     }
 
-    nextButton.classList.remove("hidden"); // Zeigt den "Nächste Frage"-Button an
+    nextButton.classList.remove("hidden"); 
 }
 
 nextButton.addEventListener("click", () => {
@@ -85,8 +84,8 @@ nextButton.addEventListener("click", () => {
 });
 
 function showResults() {
-    questionContainer.classList.add("hidden"); // Versteckt den Fragenbereich
-    resultContainer.classList.remove("hidden"); // Zeigt die Ergebnisse an
+    questionContainer.classList.add("hidden"); 
+    resultContainer.classList.remove("hidden");
 
     questions.forEach((q, index) => {
         const li = document.createElement("li");
