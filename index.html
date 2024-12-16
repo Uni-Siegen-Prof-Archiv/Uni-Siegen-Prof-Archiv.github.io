@@ -83,24 +83,13 @@
 </head>
 <body>
     <div class="layout-container">
-        <!-- Navigationsleiste -->
-        <nav class="navbar">
-            <a href="#link1" class="nav-link">
-                <img src="hs.svg" alt="Link 1" class="nav-image">
-            </a>
-            <a href="#link3" class="nav-link">
-                <img src="siegen.svg" alt="Link 3" class="nav-image">
-            </a>
-        </nav>
-
-        <!-- PDF als Bild -->
         <div class="pdf-container">
             <img src="info_csa_campaign.png" alt="PDF Content" class="pdf-image">
         </div>
 
-        <!-- Rechte Seite (Statistiken und Spiel) -->
+      
         <div class="right-panel">
-            <!-- Statistik Container -->
+      
             <div class="stats-container">
                 <div class="stat-box">
                     <div class="stat-label">Gesamte Aufrufe</div>
@@ -108,7 +97,7 @@
                 </div>
             </div>
 
-            <!-- Spielbereich -->
+      
             <div class="game-area">
                 <div id="question-container" class="hidden">
                     <p id="question"></p>
@@ -127,7 +116,6 @@
     </div>
 
     <script>
-        // Vereinfachtes Tracking
         async function trackVisit() {
             let usbId = localStorage.getItem('usbId');
             
@@ -155,7 +143,6 @@
             }
         }
 
-        // Initialer Tracking-Aufruf
         trackVisit();
     </script>
     
