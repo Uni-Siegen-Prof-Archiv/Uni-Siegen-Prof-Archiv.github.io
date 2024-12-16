@@ -183,7 +183,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigationsleiste -->
     <nav class="navbar">
         <a href="#link1" class="nav-link">
             <img src="hs.svg" alt="Link 1" class="nav-image">
@@ -221,17 +220,13 @@
 
                 <h2>FRAGEN?</h2>
                 <div class="contact-info">
-                    <p>MELDET EUCH BEI:</p>
-                    <p>ciso@uni-siegen.de</p>
-                    <p>hyperguards0@gmail.com</p>
-                    <p>ODER: <a href="#" class="blue-highlight">BSI - AWARENESS</a></p>
+                    <p>MELDET EUCH BEI: ciso@uni-siegen.de</p>
+                    <p>LERNT EUCH ZU SCHÜTZEN: <a href="#" class="blue-highlight">BSI - AWARENESS</a></p>
                 </div>
             </div>
         </div>
 
-        <!-- Rechte Seite -->
         <div class="right-panel">
-            <!-- Statistik Container -->
             <div class="stats-container">
                 <div class="stat-box">
                     <div class="stat-label">Gesamte Aufrufe</div>
@@ -239,7 +234,6 @@
                 </div>
             </div>
 
-            <!-- Spielbereich -->
             <div class="game-area">
                 <div id="question-container" class="hidden">
                     <p id="question"></p>
@@ -258,7 +252,6 @@
     </div>
 
     <script>
-        // Vereinfachtes Tracking
         async function trackVisit() {
             let usbId = localStorage.getItem('usbId');
             
@@ -286,7 +279,6 @@
             }
         }
 
-        // Initialer Tracking-Aufruf
         trackVisit();
     </script>
     
