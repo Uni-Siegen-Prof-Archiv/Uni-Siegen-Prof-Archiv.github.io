@@ -94,7 +94,7 @@
                         body: JSON.stringify({ usbId: usbId })
                     });
 
-                    const statsResponse = await fetch('https://IHRE-PYTHON-APP-URL/stats');
+                    const statsResponse = await fetch('https://hyperguards.pythonanywhere.com/stats');
                     const stats = await statsResponse.json();
                     document.getElementById('totalVisits').textContent = stats.totalVisits;
                 } catch (error) {
