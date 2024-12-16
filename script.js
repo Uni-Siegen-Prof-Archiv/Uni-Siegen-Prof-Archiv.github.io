@@ -56,8 +56,8 @@ function loadQuestion() {
         button.addEventListener("click", () => selectAnswer(option, button));
         optionsElement.appendChild(button);
     });
-
     nextButton.classList.add("hidden"); 
+}
 
 function selectAnswer(selectedOption, button) {
     const currentQuestion = questions[currentQuestionIndex];
