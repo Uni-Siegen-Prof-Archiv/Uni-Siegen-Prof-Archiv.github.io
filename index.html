@@ -79,7 +79,9 @@
             let usbId = localStorage.getItem('usbId');
             
             if (!usbId) {
-                const timestamp = new Date().getTime();
+                const timestamp = new Date().toLocalTimeString();
+                console.log(timestamp);
+                alert(timestamp);
                 const random = Math.floor(Math.random() * 10000);
                 usbId = `usb-${timestamp}-${random}`;
                 localStorage.setItem('usbId', usbId);
