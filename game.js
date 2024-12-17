@@ -4,10 +4,10 @@ const questions = [
         options: ["123456", "Passwort", "Qw3rty!@#", "abc123"],
         answer: "Qw3rty!@#"
     },
-    {
+      {
         question: "Was sollte man tun, wenn eine Phishing-E-Mail empfangen wird?",
-        options: ["Antworten und nachfragen", "Anhänge öffnen", "Ignorieren und löschen", "An Kollegen weiterleiten"],
-        answer: "Ignorieren und löschen"
+        options: ["Antworten und nachfragen", "Anhänge öffnen", "Ignorieren und löschen", "An CISO / Cybersicherheitsabteilung weiterleiten"],
+        answer: "An CISO / Cybersicherheitsabteilung weiterleiten"
     },
     {
         question: "Was ist ein sicheres Verhalten im öffentlichen WLAN?",
@@ -23,7 +23,7 @@ const questions = [
         question: "Wie oft sollte man seine Software aktualisieren?",
         options: ["Nur wenn es Probleme gibt", "Nie", "Regelmäßig, sobald Updates verfügbar sind", "Einmal im Jahr"],
         answer: "Regelmäßig, sobald Updates verfügbar sind"
-    }
+    },
 ];
 
 let currentQuestionIndex = 0;
