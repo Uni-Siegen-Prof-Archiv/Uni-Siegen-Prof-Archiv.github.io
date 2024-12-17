@@ -76,13 +76,12 @@
     </div>
     <script>
        async function trackVisit() {
-    let usbId = localStorage.getItem('usbId');
-    if (usbId) {
-        alert("USB already registered.");
-        return;
-    }
-
-
+        let usbId = localStorage.getItem('usbId');
+        if (usbId) {
+            alert("USB already registered.");
+            return;
+        }
+           
         const date = new Date();
         date.setMinutes(0, 0, 0); 
         const timestamp = date.toISOString().split('.')[0].replace(/[^0-9]/g, '-');
@@ -116,9 +115,7 @@
             alert('Fehler beim Tracking: ' + error.message);
         }
     }
-}
-
-        trackVisit();
+    trackVisit();
     </script>
     
     <script src="script.js"></script>
