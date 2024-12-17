@@ -8,7 +8,7 @@ async function fetchStats() {
         updateStatsDisplay(stats);
     } catch (error) {
         console.error('Error fetching stats:', error);
-        alert('Fehler beim Laden der Statistiken: ' + error.message);
+        document.getElementById('totalVisits').textContent = 'Error';
     }
 }
 
@@ -40,15 +40,11 @@ async function registerNewVisit() {
         await fetchStats(); 
     } catch (error) {
         console.error('Error registering visit:', error);
-        alert('Fehler beim Registrieren des Besuchs: ' + error.message);
     }
 }
 
 async function checkAndTrackVisit() {
     const usbId = localStorage.getItem('usbId');
-    
-    await fetchStats();
-    
     if (!usbId) {
         await registerNewVisit();
     } else {
@@ -56,4 +52,8 @@ async function checkAndTrackVisit() {
     }
 }
 
+fetchStats();
+
 checkAndTrackVisit();
+
+setInterval(fetchStats, 30000);
