@@ -12,8 +12,6 @@ async function fetchStats() {
     }
 }
 
-document.getElementById('totalVisits').textContent = 'Wird geladen...';
-
 function updateStatsDisplay(stats) {
     const element = document.getElementById('totalVisits');
     if (!stats) {
