@@ -8,9 +8,11 @@ async function fetchStats() {
         updateStatsDisplay(stats);
     } catch (error) {
         console.error('Error fetching stats:', error);
-        document.getElementById('totalVisits').textContent = 'Error';
+        document.getElementById('totalVisits').textContent = 'Fehler beim Abfragen der Statistik';
     }
 }
+
+document.getElementById('totalVisits').textContent = 'Wird geladen ...';
 
 function updateStatsDisplay(stats) {
     const element = document.getElementById('totalVisits');
