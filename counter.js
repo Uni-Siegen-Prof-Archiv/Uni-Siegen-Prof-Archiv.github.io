@@ -1,6 +1,7 @@
 async function fetchStats() {
     try {
         const response = await fetch('https://hyperguards.pythonanywhere.com/stats');
+        console.log(response);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -49,7 +50,7 @@ async function registerNewVisit() {
         localStorage.setItem('usbId', usbId);
         await fetchStats(); 
     } catch (error) {
-        console.error('Error registering visit:', error);
+        console.error('Fehler beim Registrieren des Besuchs: ', error);
     }
 }
 
