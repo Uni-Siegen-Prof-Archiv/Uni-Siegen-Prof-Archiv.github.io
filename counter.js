@@ -1,6 +1,7 @@
 async function fetchStats() {
     try {
         const response = await fetch('https://hyperguards.pythonanywhere.com/stats');
+        console.log(response);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -8,14 +9,24 @@ async function fetchStats() {
         updateStatsDisplay(stats);
     } catch (error) {
         console.error('Error fetching stats:', error);
-        document.getElementById('totalVisits').textContent = 'Error';
+        document.getElementById('totalVisits').textContent = 'Fehler beim Abfragen der Statistik';
     }
 }
 
-function updateStatsDisplay(stats) {
-    document.getElementById('totalVisits').textContent = stats.totalVisits;
-}
+document.getElementById('totalVisits').textContent = 'Wird geladen ...';
 
+function updateStatsDisplay(stats) {
+    const element = document.getElementById('totalVisits');
+    if (!stats) {
+        element.textContent = 'Keine Daten verfügbar';
+        return;
+    }
+    if (typeof stats.totalVisits !== 'number') {
+        element.textContent = 'Ungültiges Datenformat';
+        return;
+    }
+    element.textContent = stats.totalVisits;
+}
 async function registerNewVisit() {
     const date = new Date();
     date.setMinutes(0, 0, 0);
@@ -39,7 +50,7 @@ async function registerNewVisit() {
         localStorage.setItem('usbId', usbId);
         await fetchStats(); 
     } catch (error) {
-        console.error('Error registering visit:', error);
+        console.error('Fehler beim Registrieren des Besuchs: ', error);
     }
 }
 

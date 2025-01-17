@@ -1,28 +1,29 @@
+ 
 const questions = [
     {
-        question: "Was ist das sicherste Passwort?",
-        options: ["123456", "Passwort", "Qw3rty!@#", "abc123"],
-        answer: "Qw3rty!@#"
+        question: "Welche Sicherheitsmaßnahme reduziert die Auswirkungen von Phishing-Angriffen auf Unternehmensdaten am besten?",
+        options: ["Keine Netzwerkverbindungen zulassen", "Jeden Benutzer und jede Aktion unabhängig von Standort oder Berechtigungen überprüfen", "E-Mail-Kommunikation vollständig deaktivieren", "Sich ausschließlich auf Firewalls und Antivirenprogramme konzentrieren"],
+        answer: "Jeden Benutzer und jede Aktion unabhängig von Standort oder Berechtigungen überprüfen"
     },
     {
-        question: "Was sollte man tun, wenn eine Phishing-E-Mail empfangen wird?",
-        options: ["Antworten und nachfragen", "Anhänge öffnen", "Ignorieren und löschen", "An Kollegen weiterleiten"],
-        answer: "Ignorieren und löschen"
+        question: "Was ist die beste Maßnahme gegen Phishing-Angriffe?",
+        options: ["Ein starkes Passwort", "Regelmäßige Mitarbeiterschulungen und Multi-Faktor-Authentifizierung (MFA)", "Eine größere IT-Abteilung", "Die Social-Media-Profile aller Mitarbeiter deaktivieren"],
+        answer: "Regelmäßige Mitarbeiterschulungen und Multi-Faktor-Authentifizierung (MFA)"
     },
     {
-        question: "Was ist ein sicheres Verhalten im öffentlichen WLAN?",
-        options: ["Online-Banking durchführen", "Verbindung ohne VPN vermeiden", "Persönliche Daten eingeben", "Dateien hochladen"],
-        answer: "Verbindung ohne VPN vermeiden"
+        question: "Wie können Sie überprüfen, ob eine erhaltene E-Mail echt ist?",
+        options: ["Durch Überprüfung der Plausibilität von Absender und Domain", "Öffnen des Anhangs zur Analyse des Inhalts", "Antworten auf die E-Mail und um weitere Informationen bitten", "Weiterleiten der E-Mail an Freunde zur Überprüfung"],
+        answer: "Durch Überprüfung der Plausibilität von Absender und Domain"
     },
     {
-        question: "Was ist ein Hinweis auf eine gefälschte Website?",
-        options: ["HTTPS in der URL", "Rechtschreibfehler und schlechtes Design", "Professionelles Aussehen", "Viele Bilder"],
-        answer: "Rechtschreibfehler und schlechtes Design"
+        question: "Woran können Sie erkennen, dass eine Website möglicherweise eine Phishing-Seite ist?",
+        options: ["Die Website verwendet kein HTTPS-Protokoll oder hat ein ungültiges Zertifikat", "Die Website lädt langsam", "Die Website hat ein minimalistisches Design", "Die Website ist schwer in einer Suchmaschine zu finden"],
+        answer: "Die Website verwendet kein HTTPS-Protokoll oder hat ein ungültiges Zertifikat"
     },
     {
-        question: "Wie oft sollte man seine Software aktualisieren?",
-        options: ["Nur wenn es Probleme gibt", "Nie", "Regelmäßig, sobald Updates verfügbar sind", "Einmal im Jahr"],
-        answer: "Regelmäßig, sobald Updates verfügbar sind"
+        question: "Was sollten Sie tun, wenn Sie versehentlich Ihre Zugangsdaten auf einer Phishing-Seite eingegeben haben?",
+        options: ["Das Passwort sofort ändern und an die legitime Website melden", "Die E-Mail ignorieren und warten, bis sich der Angreifer meldet", "Den Browser schließen und nichts weiter unternehmen", "Die Zugangsdaten auf anderen Plattformen ändern"],
+        answer: "Das Passwort sofort ändern und an die legitime Website melden"
     }
 ];
 
