@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,70 +7,80 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="warn-screen" id="warnScreen">
+    <div class="warn-content">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY250d2U3M3ViazVxdzZjMDl6anc0M2Z6dmljamFremxzbmkyMzE5diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DqiMTFxiXx0VaVZQbF/giphy.gif"
+             alt="Warning Animation"
+             class="warning-gif">
+    </div>
+</div>
+    <div class="container" id="mainContent">
+        <div class="pdf-viewer">
+            <div class="pdf-content">
+                <div class="logo-container">
+                    <a class="nav-link" href="https://www.hs-mannheim.de/">
+                        <img src="hs.svg" alt="Hochschule Mannheim Logo"/>
+                    </a>
+                    <a class="nav-link" href="https://www.uni-siegen.de/start/">
+                        <img src="siegen.svg" alt="Universität Siegen Logo" />
+                    </a>
+                </div>
 
-<div class="container">
-    <div class="pdf-viewer">
-        <div class="pdf-content">
-            <div class="logo-container">
-                <a class="nav-link" href="https://www.hs-mannheim.de/">
-                    <img src="hs.svg" alt="Hochschule Mannheim Logo"/>
-                </a>
-                <a class="nav-link" href="https://www.uni-siegen.de/start/">
-                    <img src="siegen.svg" alt="Universität Siegen Logo" />
-                </a>
-            </div>
-
-            <h1>Du bist Teil unserer Cyber Security Kampagne!</h1>
+                <h1>Du bist Teil unserer Cyber Security Kampagne!</h1>
 
                 <h2>WAS IST PASSIERT?</h2>
                 <p>Du hast gerade einen USB-Stick eingesteckt, den du irgendwo auf dem Campus gefunden hast? Dieser Stick wurde im Rahmen einer <span class="blue-highlight">Cyber Security Awareness Kampagne</span> der Hochschule Mannheim absichtlich platziert, um auf potenzielle Sicherheitsrisiken hinzuweisen.</p>
 
-            <h2>WAS STECKT DAHINTER?</h2>
-            <p>Keine Sorge... Wir sind Studierende der Hochschule Mannheim und führen diese Kampagne in Zusammenarbeit mit der Universität Siegen durch. Unser Ziel ist es, das Bewusstsein für IT-Sicherheit zu schärfen und unter anderem auf die Gefahren im Umgang mit unbekannten USB/anderen Datenträgern hinzuweisen.</p>
+                <h2>WAS STECKT DAHINTER?</h2>
+                <p>Keine Sorge... Wir sind Studierende der Hochschule Mannheim und führen diese Kampagne in Zusammenarbeit mit der Universität Siegen durch. Unser Ziel ist es, das Bewusstsein für IT-Sicherheit zu schärfen und unter anderem auf die Gefahren im Umgang mit unbekannten USB/anderen Datenträgern hinzuweisen.</p>
 
-            <h2>WAS STECKT DAHINTER?</h2>
-            <ul>
-                <li>Stecke keine <span class="highlight">fremden Datenträger</span> in dein Gerät.</li>
-                <li>Halte deine <span class="highlight">Sicherheitssoftware stets aktuell</span> und informiere dich regelmäßig über aktuelle Bedrohungen.</li>
-                <li>Verwende <span class="highlight">Antivirus</span> Programme</li>
-            </ul>
+                <h2>WICHTIGE SICHERHEITSHINWEISE</h2>
+                <ul>
+                    <li>Stecke keine <span class="highlight">fremden Datenträger</span> in dein Gerät.</li>
+                    <li>Halte deine <span class="highlight">Sicherheitssoftware stets aktuell</span> und informiere dich regelmäßig über aktuelle Bedrohungen.</li>
+                    <li>Verwende <span class="highlight">Antivirus</span> Programme</li>
+                </ul>
 
-            <h2>WAS SOLLTEST DU JETZT TUN?</h2>
-            <p>Bitte lege den USB-Stick an den Ort zurück, an dem du ihn gefunden hast, damit auch andere von dieser Kampagne lernen können.</p>
+                <h2>WAS SOLLTEST DU JETZT TUN?</h2>
+                <p>Bitte lege den USB-Stick an den Ort zurück, an dem du ihn gefunden hast, damit auch andere von dieser Kampagne lernen können.</p>
 
-            <h2>FRAGEN?</h2>
-            <div class="contact-info">
-                <p>Meldet euch bei: <a href="mailto:ciso@uni-siegen.de" class="blue-highlight">ciso@uni-siegen.de </a></p>
-                <p>Mehr erfahren: <a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Faktor-Mensch/Awareness/awareness_node.html" class="blue-highlight">BSI - Awareness</a></p>
+                <h2>FRAGEN?</h2>
+                <div class="contact-info">
+                    <p>Meldet euch bei: <a href="mailto:ciso@uni-siegen.de" class="blue-highlight">ciso@uni-siegen.de</a></p>
+                    <p>Mehr erfahren: <a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Faktor-Mensch/Awareness/awareness_node.html" class="blue-highlight">BSI - Awareness</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-label">Gesamte Aufrufe</div>
+                    <div class="stat-value" id="totalVisits">-</div>
+                </div>
+            </div>
+
+            <div class="game-area">
+                <div id="question-container" class="hidden">
+                    <p id="question"></p>
+                    <div id="answers"></div>
+                    <button id="next-button" class="hidden">Nächste Frage</button>
+                </div>
+                <div id="start-container">
+                    <button id="start-button">Spiel starten</button>
+                </div>
+                <div id="result-container" class="hidden">
+                    <h3>Ergebnisse</h3>
+                    <ul id="results-list"></ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="right-panel">
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-label">Gesamte Aufrufe</div>
-                <div class="stat-value" id="totalVisits">-</div>
-            </div>
-        </div>
-
-        <div class="game-area">
-            <div id="question-container" class="hidden">
-                <p id="question"></p>
-                <div id="answers"></div>
-                <button id="next-button" class="hidden">Nächste Frage</button>
-            </div>
-            <div id="start-container">
-                <button id="start-button">Spiel starten</button>
-            </div>
-            <div id="result-container" class="hidden">
-                <h3>Ergebnisse</h3>
-                <ul id="results-list"></ul>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="counter.js"></script>
-<script src="game.js"></script>
+    <script src="warning-screen.js"></script>
+    <script src="counter.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
+
+
